@@ -1,0 +1,33 @@
+import streamlit as st
+
+# Data: Mysterious Photos
+photos = [
+    {
+        "title": "The Cottingley Fairies (1917)",
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/4/47/Cottingley_Fairies_1.jpg",
+        "description": "Two cousins in England claimed to photograph real fairies. Later revealed to be mostly a hoax—except one photo still sparks debate."
+    },
+    {
+        "title": "Solway Firth Spaceman (1964)",
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/8/86/SolwayfirthSpaceman.jpg",
+        "description": "A mysterious astronaut-like figure appeared in this photo, but the photographer claimed nobody was there."
+    },
+    {
+        "title": "The Ghost of Abraham Lincoln (1872)",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Mary_Todd_Lincoln_with_the_ghost_of_her_husband.jpg",
+        "description": "Supposedly shows Lincoln’s ghost behind Mary Todd Lincoln, taken by spirit photographer William Mumler."
+    },
+    # Add more entries similarly
+]
+
+# Streamlit App
+st.set_page_config(page_title="20 Most Mysterious Photos", layout="centered")
+st.title("📷 The 20 Most Mysterious Photos Ever Taken")
+st.markdown("A collection of strange, haunting, and unexplained images from history.")
+
+# Display each photo
+for photo in photos:
+    st.subheader(photo["title"])
+    st.image(photo["image_url"], use_column_width=True)
+    st.markdown(photo["description"])
+    st.markdown("---")
